@@ -1,18 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ShopData : MonoBehaviour
+namespace Shop
 {
-    // Start is called before the first frame update
-    void Start()
+    [CreateAssetMenu(menuName = "ShopData")]
+    public class ShopData : ScriptableObject
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public ItemSlotData[] ItemSlotData;
     }
 }

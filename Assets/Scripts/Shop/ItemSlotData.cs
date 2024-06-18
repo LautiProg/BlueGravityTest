@@ -1,18 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemSlotData : MonoBehaviour
+namespace Shop
 {
-    // Start is called before the first frame update
-    void Start()
+    [System.Serializable]
+    public class ItemSlotData
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public Sprite ItemIcon;
+        public float ItemPrice;
+        public string ItemDescription;
+        public Sprite ItemSprite;
     }
 }
