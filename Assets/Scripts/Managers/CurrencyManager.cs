@@ -8,7 +8,15 @@ namespace Managers
         
         public bool CanBuy(float price)
         {
-            return _currentCoins >= price;
+            var canBuy = _currentCoins >= price;
+            Debug.Log(canBuy? "Can Buy Item" : "Cant Buy Item");
+            return canBuy;
+        }
+
+        public void BuyItem(float price)
+        {
+            Debug.Log($"Buying item for {price} coins");
+            _currentCoins -= price;
         }
     }
 }
