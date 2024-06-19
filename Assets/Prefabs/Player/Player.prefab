@@ -306,6 +306,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _inputReader: {fileID: 11400000, guid: 0b72389a9d5eb634a8afad33b0af8d46, type: 2}
   _interactionsController: {fileID: 3990982416277176270}
+  _walkLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  _movementPosition: {x: 0, y: 0}
 --- !u!114 &1604735532231040137
 MonoBehaviour:
   m_ObjectHideFlags: 0
