@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class CustomizationCanvas : MonoBehaviour
+    public class CustomizationCanvas : GameCanvas
     {
         //References
         [SerializeField] private Button _saveCustomizationButton;
@@ -32,12 +32,6 @@ namespace UI
 
             CurrencyManager.Instance.OnItemPurchased += CreateCustomizationSlot;
             _closeCanvasButton.onClick.AddListener(CloseCanvas);
-        }
-        
-        private void CloseCanvas()
-        {
-            GetComponent<CanvasGroup>().alpha = 0;
-            GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
 
         public void CreateCustomizationSlot(ItemSlotData itemSlotData)

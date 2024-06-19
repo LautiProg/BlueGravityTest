@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace UI
 {
-    public class ShopCanvas : MonoBehaviour
+    public class ShopCanvas : GameCanvas
     {
         //References
         [SerializeField] private Button _closeCanvasButton;
@@ -27,12 +27,6 @@ namespace UI
                 CreateItemSlot(itemSlotData);
             }
             _closeCanvasButton.onClick.AddListener(CloseCanvas);
-        }
-
-        private void CloseCanvas()
-        {
-            GetComponent<CanvasGroup>().alpha = 0;
-            GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
 
         private void CreateItemSlot(ItemSlotData itemSlotData)

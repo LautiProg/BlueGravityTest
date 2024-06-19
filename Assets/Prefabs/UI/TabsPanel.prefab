@@ -54,6 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _customizationTabButton: {fileID: 7577423619467249654}
+  _shopTabButton: {fileID: 4219943123320567341}
 --- !u!1 &5252871461803920719
 GameObject:
   m_ObjectHideFlags: 0
