@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Shop
+namespace Data
 {
     [CreateAssetMenu(menuName = "ShopData")]
     public class ShopData : ScriptableObject

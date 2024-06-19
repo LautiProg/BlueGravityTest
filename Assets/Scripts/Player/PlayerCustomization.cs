@@ -1,4 +1,5 @@
 using System;
+using Data;
 using Managers;
 using UnityEngine;
 
@@ -15,6 +16,17 @@ namespace Player
         private void Start()
         {
             CustomizationManager.Instance.OnCustomizationChanged += SetCustomization;
+            LoadCustomization();
+        }
+
+        private void LoadCustomization()
+        {
+            var loadedCustomization = CustomizationManager.Instance.LoadCustomization();
+            SetCustomization(loadedCustomization.FaceSprite, ItemType.Face);
+            SetCustomization(loadedCustomization.HairSprite, ItemType.Hair);
+            SetCustomization(loadedCustomization.ClothesSprite, ItemType.Clothes);
+            SetCustomization(loadedCustomization.PantsSprite, ItemType.Pants);
+            SetCustomization(loadedCustomization.FootSprite, ItemType.Foot);
         }
 
         private void SetCustomization(Sprite sprite, ItemType itemType)
@@ -39,6 +51,18 @@ namespace Player
                 default:
                     throw new ArgumentOutOfRangeException(nameof(itemType), itemType, null);
             }
+        }
+
+        public Customization GetCustomization()
+        {
+            return new Customization
+            {
+                FaceSprite = _faceRenderer.sprite,
+                HairSprite = _hairRenderer.sprite,
+                ClothesSprite = _clothesRenderer.sprite,
+                PantsSprite = _pantsRenderer.sprite,
+                FootSprite = _footRenderer.sprite
+            };
         }
 
         private void OnDestroy()

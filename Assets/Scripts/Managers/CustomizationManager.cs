@@ -1,14 +1,18 @@
 using System;
 using System.Collections.Generic;
-using Shop;
+using Data;
+using Player;
 using UnityEngine;
 
 namespace Managers
 {
     public class CustomizationManager : SingletonPersistent<CustomizationManager>
-    { 
-        public event Action<Sprite, ItemType> OnCustomizationChanged;
+    {
+        [SerializeField] private CustomizationData _customizationData;
         [SerializeField] private List<ItemSlotData> _itemsObtained;
+
+        public List<ItemSlotData> ItemsObtained => _itemsObtained;
+        public event Action<Sprite, ItemType> OnCustomizationChanged;
 
         private void Start()
         {
@@ -24,6 +28,17 @@ namespace Managers
         public void SetItemPiece(Sprite sprite, ItemType itemType)
         {
             OnCustomizationChanged?.Invoke(sprite, itemType);
+        }
+
+        public void SaveCustomization()
+        {
+            var customization = FindObjectOfType<PlayerCustomization>().GetCustomization();
+            _customizationData.SaveData(customization);
+        }
+
+        public Customization LoadCustomization()
+        {
+            return _customizationData.LoadData();
         }
         
         public bool HasItem(int id)

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Shop
+namespace Data
 {
     [System.Serializable]
     public class ItemSlotData
