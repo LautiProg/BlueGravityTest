@@ -8,12 +8,14 @@ namespace UI
     {
         [SerializeField] private ShopCanvas _shopCanvas;
         [SerializeField] private CustomizationCanvas _customizationCanvas;
+        [SerializeField] private SellCanvas _sellCanvas;
         private GameCanvas _currentCanvas;
 
         private void Start()
         {
             _shopCanvas.CloseCanvas();
             _customizationCanvas.CloseCanvas();
+            _sellCanvas.CloseCanvas();
         }
 
         public void OpenCanvas(CanvasType canvasType)
@@ -29,6 +31,7 @@ namespace UI
             {
                 CanvasType.Shop => _shopCanvas,
                 CanvasType.Customization => _customizationCanvas,
+                CanvasType.Sell => _sellCanvas,
                 _ => throw new ArgumentOutOfRangeException(nameof(canvasType), canvasType, null)
             };
         }
@@ -36,6 +39,6 @@ namespace UI
     
     public enum CanvasType
     {
-        Shop, Customization
+        Shop, Customization, Sell
     }
 }

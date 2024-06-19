@@ -10,15 +10,14 @@ namespace UI
     {
         //References
         [SerializeField] private Button _saveCustomizationButton;
-        [SerializeField] private Button _closeCanvasButton;
         [SerializeField] private CustomizationSlot _customizationSlotPrefab;
         
         //Item Containers
-        [SerializeField] private Transform _faceContainer;
-        [SerializeField] private Transform _hairContainer;
-        [SerializeField] private Transform _clothesContainer;
-        [SerializeField] private Transform _pantsContainer;
-        [SerializeField] private Transform _footContainer;
+        [SerializeField] private SlotContainer _faceContainer;
+        [SerializeField] private SlotContainer _hairContainer;
+        [SerializeField] private SlotContainer _clothesContainer;
+        [SerializeField] private SlotContainer _pantsContainer;
+        [SerializeField] private SlotContainer _footContainer;
 
         private void Start()
         {
@@ -32,7 +31,6 @@ namespace UI
 
             CurrencyManager.Instance.OnItemPurchased += CreateCustomizationSlot;
             CurrencyManager.Instance.OnItemSold += RemoveCustomizationSlot;
-            _closeCanvasButton.onClick.AddListener(CloseCanvas);
         }
 
         private void CreateCustomizationSlot(ItemSlotData itemSlotData)
@@ -40,19 +38,19 @@ namespace UI
             switch (itemSlotData.ItemType)
             {
                 case ItemType.Face:
-                    Instantiate(_customizationSlotPrefab, _faceContainer).InitializeSlot(itemSlotData);
+                    _faceContainer.CreateSlot(_customizationSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Hair:
-                    Instantiate(_customizationSlotPrefab, _hairContainer).InitializeSlot(itemSlotData);
+                    _hairContainer.CreateSlot(_customizationSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Clothes:
-                    Instantiate(_customizationSlotPrefab, _clothesContainer).InitializeSlot(itemSlotData);
+                    _clothesContainer.CreateSlot(_customizationSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Pants:
-                    Instantiate(_customizationSlotPrefab, _pantsContainer).InitializeSlot(itemSlotData);
+                    _pantsContainer.CreateSlot(_customizationSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Foot:
-                    Instantiate(_customizationSlotPrefab, _footContainer).InitializeSlot(itemSlotData);
+                    _footContainer.CreateSlot(_customizationSlotPrefab, itemSlotData);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -63,21 +61,15 @@ namespace UI
         {
             var container = itemSlotData.ItemType switch
             {
-                ItemType.Face => _faceContainer.transform,
-                ItemType.Hair => _hairContainer.transform,
-                ItemType.Clothes => _clothesContainer.transform,
-                ItemType.Pants => _pantsContainer.transform,
-                ItemType.Foot => _footContainer.transform,
+                ItemType.Face => _faceContainer,
+                ItemType.Hair => _hairContainer,
+                ItemType.Clothes => _clothesContainer,
+                ItemType.Pants => _pantsContainer,
+                ItemType.Foot => _footContainer,
                 _ => throw new ArgumentOutOfRangeException()
             };
-
-            foreach (CustomizationSlot item in container)
-            {
-                if (item.ItemSlotData == itemSlotData)
-                {
-                    Destroy(item.gameObject);
-                }
-            }
+            
+            if (container.GetSlot(itemSlotData)) container.DestroySlot(itemSlotData);
         }
     }
 }

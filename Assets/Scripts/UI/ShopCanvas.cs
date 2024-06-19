@@ -1,23 +1,21 @@
 using System;
 using Data;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI
 {
     public class ShopCanvas : GameCanvas
     {
         //References
-        [SerializeField] private Button _closeCanvasButton;
         [SerializeField] private ShopData _shopData;
         [SerializeField] private ItemSlot _itemSlotPrefab;
         
         //Item Containers
-        [SerializeField] private Transform _faceContainer;
-        [SerializeField] private Transform _hairContainer;
-        [SerializeField] private Transform _clothesContainer;
-        [SerializeField] private Transform _pantsContainer;
-        [SerializeField] private Transform _footContainer;
+        [SerializeField] private SlotContainer _faceContainer;
+        [SerializeField] private SlotContainer _hairContainer;
+        [SerializeField] private SlotContainer _clothesContainer;
+        [SerializeField] private SlotContainer _pantsContainer;
+        [SerializeField] private SlotContainer _footContainer;
 
         private void Start()
         {
@@ -25,7 +23,6 @@ namespace UI
             {
                 CreateItemSlot(itemSlotData);
             }
-            _closeCanvasButton.onClick.AddListener(CloseCanvas);
         }
 
         private void CreateItemSlot(ItemSlotData itemSlotData)
@@ -33,19 +30,19 @@ namespace UI
             switch (itemSlotData.ItemType)
             {
                 case ItemType.Face:
-                    Instantiate(_itemSlotPrefab, _faceContainer).InitializeSlot(itemSlotData);
+                    _faceContainer.CreateSlot(_itemSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Hair:
-                    Instantiate(_itemSlotPrefab, _hairContainer).InitializeSlot(itemSlotData);
+                    _hairContainer.CreateSlot(_itemSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Clothes:
-                    Instantiate(_itemSlotPrefab, _clothesContainer).InitializeSlot(itemSlotData);
+                    _clothesContainer.CreateSlot(_itemSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Pants:
-                    Instantiate(_itemSlotPrefab, _pantsContainer).InitializeSlot(itemSlotData);
+                    _pantsContainer.CreateSlot(_itemSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Foot:
-                    Instantiate(_itemSlotPrefab, _footContainer).InitializeSlot(itemSlotData);
+                    _footContainer.CreateSlot(_itemSlotPrefab, itemSlotData);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

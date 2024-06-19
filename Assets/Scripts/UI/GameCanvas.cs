@@ -1,10 +1,12 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
     public abstract class GameCanvas : MonoBehaviour
     {
+        [SerializeField] private Button _closeCanvasButton;
         private CanvasGroup _canvasGroup;
         private bool _isOpened;
         public bool IsOpened => _isOpened;
@@ -12,6 +14,7 @@ namespace UI
         private void Awake()
         {
             _canvasGroup = GetComponent<CanvasGroup>();
+            _closeCanvasButton.onClick.AddListener(CloseCanvas);
         }
 
         public void OpenCanvas()

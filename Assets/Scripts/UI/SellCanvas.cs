@@ -2,22 +2,20 @@ using System;
 using Data;
 using Managers;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI
 {
     public class SellCanvas : GameCanvas
     {
         //References
-        [SerializeField] private Button _closeCanvasButton;
         [SerializeField] private SellSlot _sellSlotPrefab;
         
         //Item Containers
-        [SerializeField] private Transform _faceContainer;
-        [SerializeField] private Transform _hairContainer;
-        [SerializeField] private Transform _clothesContainer;
-        [SerializeField] private Transform _pantsContainer;
-        [SerializeField] private Transform _footContainer;
+        [SerializeField] private SlotContainer _faceContainer;
+        [SerializeField] private SlotContainer _hairContainer;
+        [SerializeField] private SlotContainer _clothesContainer;
+        [SerializeField] private SlotContainer _pantsContainer;
+        [SerializeField] private SlotContainer _footContainer;
 
         private void Start()
         {
@@ -29,7 +27,6 @@ namespace UI
                 }
             }
             CurrencyManager.Instance.OnItemPurchased += CreateSellSlot;
-            _closeCanvasButton.onClick.AddListener(CloseCanvas);
         }
 
         private void CreateSellSlot(ItemSlotData itemSlotData)
@@ -37,19 +34,19 @@ namespace UI
             switch (itemSlotData.ItemType)
             {
                 case ItemType.Face:
-                    Instantiate(_sellSlotPrefab, _faceContainer).InitializeSlot(itemSlotData);
+                    _faceContainer.CreateSlot(_sellSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Hair:
-                    Instantiate(_sellSlotPrefab, _hairContainer).InitializeSlot(itemSlotData);
+                    _hairContainer.CreateSlot(_sellSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Clothes:
-                    Instantiate(_sellSlotPrefab, _clothesContainer).InitializeSlot(itemSlotData);
+                    _clothesContainer.CreateSlot(_sellSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Pants:
-                    Instantiate(_sellSlotPrefab, _pantsContainer).InitializeSlot(itemSlotData);
+                    _pantsContainer.CreateSlot(_sellSlotPrefab, itemSlotData);
                     break;
                 case ItemType.Foot:
-                    Instantiate(_sellSlotPrefab, _footContainer).InitializeSlot(itemSlotData);
+                    _footContainer.CreateSlot(_sellSlotPrefab, itemSlotData);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
