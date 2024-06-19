@@ -9,14 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51520bebfb0b1b549b96596fe542ca92, type: 3}
-  m_Name: ShopData
+  m_Script: {fileID: 11500000, guid: 2604c33199094058b78f35f66db70995, type: 3}
+  m_Name: CustomizationData
   m_EditorClassIdentifier: 
-  ItemSlotData:
-  - Name: Clothes 1
-    ItemIcon: {fileID: 0}
-    ItemPrice: 10
-    ItemDescription: 
-    ItemSprite: {fileID: 0}
-    ItemType: 0
-    ID: 0
+  FaceData: {fileID: 0}
+  HairData: {fileID: 0}
+  ClothesData: {fileID: 0}
+  PantsData: {fileID: 0}
+  FootData: {fileID: 0}

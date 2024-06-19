@@ -1,14 +1,15 @@
 using System;
-using System.Collections.Generic;
 using Data;
 using Shop;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
     public class ShopCanvas : MonoBehaviour
     {
         //References
+        [SerializeField] private Button _closeCanvasButton;
         [SerializeField] private ShopData _shopData;
         [SerializeField] private ItemSlot _itemSlotPrefab;
         
@@ -25,6 +26,13 @@ namespace UI
             {
                 CreateItemSlot(itemSlotData);
             }
+            _closeCanvasButton.onClick.AddListener(CloseCanvas);
+        }
+
+        private void CloseCanvas()
+        {
+            GetComponent<CanvasGroup>().alpha = 0;
+            GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
 
         private void CreateItemSlot(ItemSlotData itemSlotData)

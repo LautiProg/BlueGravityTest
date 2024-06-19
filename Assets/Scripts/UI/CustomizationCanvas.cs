@@ -28,6 +28,13 @@ namespace UI
             }
 
             CurrencyManager.Instance.OnItemPurchased += CreateCustomizationSlot;
+            _closeCanvasButton.onClick.AddListener(CloseCanvas);
+        }
+        
+        private void CloseCanvas()
+        {
+            GetComponent<CanvasGroup>().alpha = 0;
+            GetComponent<CanvasGroup>().blocksRaycasts = false;
         }
 
         public void CreateCustomizationSlot(ItemSlotData itemSlotData)
