@@ -64,10 +64,5 @@ namespace Player
                 FootSprite = _footRenderer.sprite
             };
         }
-
-        private void OnDestroy()
-        {
-            CustomizationManager.Instance.OnCustomizationChanged -= SetCustomization;
-        }
     }
 }

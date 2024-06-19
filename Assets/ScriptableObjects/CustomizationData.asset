@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604c33199094058b78f35f66db70995, type: 3}
   m_Name: CustomizationData
   m_EditorClassIdentifier: 
-  FaceData: {fileID: 0}
-  HairData: {fileID: 0}
-  ClothesData: {fileID: 0}
-  PantsData: {fileID: 0}
-  FootData: {fileID: 0}
+  FaceData: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  HairData: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  ClothesData: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  PantsData: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  FootData: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}

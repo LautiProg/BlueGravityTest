@@ -1,6 +1,5 @@
 using Data;
 using Managers;
-using Shop;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +9,6 @@ namespace UI
     public class CustomizationSlot : MonoBehaviour
     {
         [SerializeField] private Image _itemImage;
-        [SerializeField] private TextMeshProUGUI _itemDescriptionText;
         
         private Button _slotButton;
         private ItemSlotData _itemSlotData;
@@ -19,7 +17,6 @@ namespace UI
         {
             _itemSlotData = itemSlotData;
             _itemImage.sprite = itemSlotData.ItemIcon;
-            _itemDescriptionText.SetText(itemSlotData.ItemDescription);
         }
 
         private void Awake()

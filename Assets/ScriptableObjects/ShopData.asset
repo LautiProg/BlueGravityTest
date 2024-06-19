@@ -14,9 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemSlotData:
   - Name: Clothes 1
-    ItemIcon: {fileID: 0}
-    ItemPrice: 10
+    ItemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    ItemPrice: 300
     ItemDescription: 
-    ItemSprite: {fileID: 0}
+    ItemSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
     ItemType: 0
+    ID: 0
+  - Name: Clothes 1
+    ItemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    ItemPrice: 15
+    ItemDescription: 
+    ItemSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    ItemType: 1
+    ID: 0
+  - Name: Clothes 1
+    ItemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    ItemPrice: 250
+    ItemDescription: 
+    ItemSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    ItemType: 2
     ID: 0

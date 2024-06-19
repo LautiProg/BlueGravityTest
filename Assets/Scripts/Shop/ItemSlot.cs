@@ -23,7 +23,7 @@ namespace Shop
             _itemSlotData = itemSlotData;
             _itemImage.sprite = itemSlotData.ItemIcon;
             _itemPriceText.SetText(itemSlotData.ItemPrice.ToString(CultureInfo.InvariantCulture));
-            _itemDescriptionText.SetText(itemSlotData.ItemDescription);
+            //_itemDescriptionText.SetText(itemSlotData.ItemDescription);
         }
 
         private void Awake()

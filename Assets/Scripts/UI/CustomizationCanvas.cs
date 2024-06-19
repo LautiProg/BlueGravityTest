@@ -22,9 +22,12 @@ namespace UI
 
         private void Start()
         {
-            foreach (var itemSlotData in CustomizationManager.Instance.ItemsObtained)
+            if (CustomizationManager.Instance.ItemsObtained.Count > 0 && CustomizationManager.Instance.ItemsObtained != null)
             {
-                CreateCustomizationSlot(itemSlotData);
+                foreach (var itemSlotData in CustomizationManager.Instance.ItemsObtained)
+                {
+                    CreateCustomizationSlot(itemSlotData);
+                }
             }
 
             CurrencyManager.Instance.OnItemPurchased += CreateCustomizationSlot;
