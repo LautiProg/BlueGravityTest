@@ -1,6 +1,5 @@
 using System;
 using Data;
-using Shop;
 using UnityEngine;
 
 namespace Managers
@@ -13,6 +12,7 @@ namespace Managers
 
         public event Action<float> OnCurrentCoinsChanged; 
         public event Action<ItemSlotData> OnItemPurchased; 
+        public event Action<ItemSlotData> OnItemSold; 
         
         public bool CanBuy(float price)
         {
@@ -26,6 +26,14 @@ namespace Managers
             Debug.Log($"Buying item for {itemSlotData.ItemPrice} coins");
             _currentCoins -= itemSlotData.ItemPrice;
             OnItemPurchased?.Invoke(itemSlotData);
+            OnCurrentCoinsChanged?.Invoke(_currentCoins);
+        }
+
+        public void SellItem(ItemSlotData itemSlotData)
+        {
+            Debug.Log($"Selling item for {itemSlotData.ItemPrice} coins");
+            _currentCoins += itemSlotData.ItemPrice;
+            OnItemSold?.Invoke(itemSlotData);
             OnCurrentCoinsChanged?.Invoke(_currentCoins);
         }
     }

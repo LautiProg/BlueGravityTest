@@ -1,35 +1,17 @@
 using Data;
 using Managers;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
 
 namespace UI
 {
-    public class CustomizationSlot : MonoBehaviour
+    public class CustomizationSlot : Slot
     {
-        [SerializeField] private Image _itemImage;
-        
-        private Button _slotButton;
-        private ItemSlotData _itemSlotData;
-        
-        public void InitializeCustomizationSlot(ItemSlotData itemSlotData)
+        public override void InitializeSlot(ItemSlotData itemSlotData)
         {
             _itemSlotData = itemSlotData;
-            _itemImage.sprite = itemSlotData.ItemIcon;
+            ItemImage.sprite = itemSlotData.ItemIcon;
         }
 
-        private void Awake()
-        {
-            if (_slotButton == null) _slotButton = GetComponent<Button>();
-        }
-
-        private void Start()
-        {
-            if (_slotButton != null)  _slotButton.onClick.AddListener(HandleSetItem);
-        }
-
-        private void HandleSetItem()
+        protected override void HandleOnClick()
         {
             CustomizationManager.Instance.SetItemPiece(_itemSlotData.ItemSprite, _itemSlotData.ItemType);
         }

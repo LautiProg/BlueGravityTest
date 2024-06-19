@@ -17,12 +17,19 @@ namespace Managers
         private void Start()
         {
             CurrencyManager.Instance.OnItemPurchased += AddPurchasedItem;
+            CurrencyManager.Instance.OnItemSold += RemovePurchasedItem;
         }
 
         private void AddPurchasedItem(ItemSlotData itemSlotData)
         {
             if (_itemsObtained.Contains(itemSlotData)) return;
             _itemsObtained.Add(itemSlotData);
+        }
+
+        private void RemovePurchasedItem(ItemSlotData itemSlotData)
+        {
+            if (!_itemsObtained.Contains(itemSlotData)) return;
+            _itemsObtained.Remove(itemSlotData);
         }
 
         public void SetItemPiece(Sprite sprite, ItemType itemType)

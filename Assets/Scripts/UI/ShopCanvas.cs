@@ -1,6 +1,5 @@
 using System;
 using Data;
-using Shop;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +12,7 @@ namespace UI
         [SerializeField] private ShopData _shopData;
         [SerializeField] private ItemSlot _itemSlotPrefab;
         
-        //Item Containters
+        //Item Containers
         [SerializeField] private Transform _faceContainer;
         [SerializeField] private Transform _hairContainer;
         [SerializeField] private Transform _clothesContainer;
@@ -34,19 +33,19 @@ namespace UI
             switch (itemSlotData.ItemType)
             {
                 case ItemType.Face:
-                    Instantiate(_itemSlotPrefab, _faceContainer).InitializeItemSlot(itemSlotData);
+                    Instantiate(_itemSlotPrefab, _faceContainer).InitializeSlot(itemSlotData);
                     break;
                 case ItemType.Hair:
-                    Instantiate(_itemSlotPrefab, _hairContainer).InitializeItemSlot(itemSlotData);
+                    Instantiate(_itemSlotPrefab, _hairContainer).InitializeSlot(itemSlotData);
                     break;
                 case ItemType.Clothes:
-                    Instantiate(_itemSlotPrefab, _clothesContainer).InitializeItemSlot(itemSlotData);
+                    Instantiate(_itemSlotPrefab, _clothesContainer).InitializeSlot(itemSlotData);
                     break;
                 case ItemType.Pants:
-                    Instantiate(_itemSlotPrefab, _pantsContainer).InitializeItemSlot(itemSlotData);
+                    Instantiate(_itemSlotPrefab, _pantsContainer).InitializeSlot(itemSlotData);
                     break;
                 case ItemType.Foot:
-                    Instantiate(_itemSlotPrefab, _footContainer).InitializeItemSlot(itemSlotData);
+                    Instantiate(_itemSlotPrefab, _footContainer).InitializeSlot(itemSlotData);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
