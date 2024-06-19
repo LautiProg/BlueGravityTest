@@ -1,3 +1,5 @@
+using System;
+using Shop;
 using UnityEngine;
 
 namespace Managers
@@ -6,6 +8,11 @@ namespace Managers
     {
         [SerializeField] private float _currentCoins;
         
+        public float CurrentCoins => _currentCoins;
+
+        public event Action<float> OnCurrentCoinsChanged; 
+        public event Action<ItemSlotData> OnItemPurchased; 
+        
         public bool CanBuy(float price)
         {
             var canBuy = _currentCoins >= price;
@@ -13,10 +20,12 @@ namespace Managers
             return canBuy;
         }
 
-        public void BuyItem(float price)
+        public void BuyItem(ItemSlotData itemSlotData)
         {
-            Debug.Log($"Buying item for {price} coins");
-            _currentCoins -= price;
+            Debug.Log($"Buying item for {itemSlotData.ItemPrice} coins");
+            _currentCoins -= itemSlotData.ItemPrice;
+            OnItemPurchased?.Invoke(itemSlotData);
+            OnCurrentCoinsChanged?.Invoke(_currentCoins);
         }
     }
 }
