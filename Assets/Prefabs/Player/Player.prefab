@@ -263,6 +263,8 @@ GameObject:
   - component: {fileID: 8253167520994457097}
   - component: {fileID: 7998474480174300256}
   - component: {fileID: 1604735532231040137}
+  - component: {fileID: 3990982416277176270}
+  - component: {fileID: 8802495513446664560}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -302,6 +304,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04bcd132cac7584ea372e043292152d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inputReader: {fileID: 11400000, guid: 0b72389a9d5eb634a8afad33b0af8d46, type: 2}
+  _interactionsController: {fileID: 3990982416277176270}
 --- !u!114 &1604735532231040137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +323,40 @@ MonoBehaviour:
   _clothesRenderer: {fileID: 8275654736053348463}
   _pantsRenderer: {fileID: 6331182897011565608}
   _footRenderer: {fileID: 7799855371847644717}
+--- !u!114 &3990982416277176270
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6315764491127489142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0fb82e85de2eb7b4291cca60573ca2c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!195 &8802495513446664560
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6315764491127489142}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &7947631758958908132
 GameObject:
   m_ObjectHideFlags: 0
