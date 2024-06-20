@@ -340,7 +340,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _closeCanvasButton: {fileID: 4959853127093969512}
-  _sellSlotPrefab: {fileID: 8205603884803416375, guid: 5696c5250815b9445b2ed276d7f3f67f, type: 3}
   _faceButton: {fileID: 757490957630146389}
   _hoodButton: {fileID: 7643553508070875495}
   _clothesButton: {fileID: 5449097426214849908}
@@ -353,6 +352,7 @@ MonoBehaviour:
   _pantsContainer: {fileID: 2448002222835387486}
   _footContainer: {fileID: 2486993171342751419}
   _weaponContainer: {fileID: 9078051284772796309}
+  _sellSlotPrefab: {fileID: 8205603884803416375, guid: 5696c5250815b9445b2ed276d7f3f67f, type: 3}
 --- !u!1 &2331218911837835782
 GameObject:
   m_ObjectHideFlags: 0

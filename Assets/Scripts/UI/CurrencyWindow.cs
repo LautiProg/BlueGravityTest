@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Globalization;
 using Managers;
 using TMPro;
@@ -17,7 +18,7 @@ namespace UI
 
         private void UpdateCoinsText(float coins)
         {
-            _coinsText.SetText(coins.ToString(CultureInfo.InvariantCulture));
+            _coinsText.SetText(coins.ToString());
         }
     }
 }
