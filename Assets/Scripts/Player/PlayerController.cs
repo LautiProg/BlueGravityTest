@@ -14,6 +14,8 @@ namespace Player
         [SerializeField] private InteractionsController _interactionsController;
         [SerializeField] private LayerMask _walkLayer;
         [SerializeField] private Vector2 _movementPosition;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private GameObject _body;
         private bool _isMoving;
 
         private Action _onMoving;
@@ -38,9 +40,14 @@ namespace Player
         private void MovePlayer()
         {
             _navMeshAgent.SetDestination(_movementPosition);
+            
+            _body.transform.rotation = _movementPosition.x > transform.position.x ? new Quaternion(0, 0, 0, 0): new Quaternion(0, 180, 0, 0);
+            
             if (Vector2.Distance(transform.position, _movementPosition) < 0.1f)
             {
                 _onMoving = delegate { };
+                _animator.SetBool("OnIdle", true);
+                _animator.SetBool("OnMovement", false);
             }
         }
 
@@ -49,6 +56,8 @@ namespace Player
             var worldPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             _movementPosition = new Vector2(worldPosition.x, worldPosition.y);
             _onMoving = MovePlayer;
+            _animator.SetBool("OnIdle", false);
+            _animator.SetBool("OnMovement", true);
         }
     }
 }

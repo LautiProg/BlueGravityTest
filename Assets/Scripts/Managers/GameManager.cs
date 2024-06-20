@@ -10,5 +10,10 @@ namespace Managers
         {
             return _mainCamera;
         }
+
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }
