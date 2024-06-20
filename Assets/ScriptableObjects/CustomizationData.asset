@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604c33199094058b78f35f66db70995, type: 3}
   m_Name: CustomizationData
   m_EditorClassIdentifier: 
-  FaceData: {fileID: -9095717837082945937, guid: 7abebefe98157ad4493f258cf308a14c, type: 3}
-  HairData: {fileID: -9095717837082945937, guid: 7abebefe98157ad4493f258cf308a14c, type: 3}
-  ClothesData: {fileID: -9095717837082945937, guid: 7abebefe98157ad4493f258cf308a14c, type: 3}
-  PantsData: {fileID: -9095717837082945937, guid: 7abebefe98157ad4493f258cf308a14c, type: 3}
-  FootData: {fileID: -9095717837082945937, guid: 7abebefe98157ad4493f258cf308a14c, type: 3}
+  FaceData: {fileID: 21300000, guid: 518ab34707033904cb1d99dbfcc9f4bb, type: 3}
+  HoodData: {fileID: 21300000, guid: 468244f274f38f64b85773c7888444b6, type: 3}
+  ClothesData: {fileID: 21300000, guid: 215dd6c48c732d744aecd29e7fecbbfa, type: 3}
+  PantsData: {fileID: 21300000, guid: c376d5b80d02ffe4ba89fd03d60ec471, type: 3}
+  FootData: {fileID: 21300000, guid: 6fa8902135d83ff49a376c05761b61d4, type: 3}
+  WeaponData: {fileID: 21300000, guid: f8d916881a19b7a4a99ec74753414a40, type: 3}

@@ -55,4 +55,4 @@ namespace Managers
     }
 }
 
-public enum ItemType{ Face, Hair, Clothes, Pants, Foot}
+public enum ItemType{ Face, Hood, Clothes, Pants, Foot, Weapon}

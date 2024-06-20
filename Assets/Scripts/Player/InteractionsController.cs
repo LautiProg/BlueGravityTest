@@ -1,4 +1,5 @@
 using Interact;
+using Managers;
 using ScriptableObjects;
 using UnityEngine;
 
@@ -10,15 +11,10 @@ namespace Player
         [SerializeField] private InputReader _inputReader;
         [SerializeField] private LayerMask _interactionMask;
         private IInteract _currentInteraction;
-        
-
-        private void Awake()
-        {
-            _mainCamera = Camera.main;
-        }
 
         private void Start()
         {
+            _mainCamera = GameManager.Instance.GetMainCamera();
             _inputReader.OnInteractEvent += Interact;
         }
 
@@ -27,6 +23,9 @@ namespace Player
             CheckForInteractions();
         }
 
+        /// <summary>
+        /// Use of Raycast in mouse position to check for interactions
+        /// </summary>
         private void CheckForInteractions()
         {
             var ray = _mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -53,6 +52,9 @@ namespace Player
             }
         }
         
+        /// <summary>
+        /// Interact with the currentInteraction
+        /// </summary>
         private void Interact()
         {
             _currentInteraction?.Interact();

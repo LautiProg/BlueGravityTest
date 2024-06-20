@@ -8,10 +8,11 @@ namespace Player
     public class PlayerCustomization : MonoBehaviour
     {
         [SerializeField] private SpriteRenderer _faceRenderer;
-        [SerializeField] private SpriteRenderer _hairRenderer;
+        [SerializeField] private SpriteRenderer _hoodRenderer;
         [SerializeField] private SpriteRenderer _clothesRenderer;
         [SerializeField] private SpriteRenderer _pantsRenderer;
         [SerializeField] private SpriteRenderer _footRenderer;
+        [SerializeField] private SpriteRenderer _weaponRenderer;
 
         private void Start()
         {
@@ -23,10 +24,11 @@ namespace Player
         {
             var loadedCustomization = CustomizationManager.Instance.LoadCustomization();
             SetCustomization(loadedCustomization.FaceSprite, ItemType.Face);
-            SetCustomization(loadedCustomization.HairSprite, ItemType.Hair);
+            SetCustomization(loadedCustomization.HoodSprite, ItemType.Hood);
             SetCustomization(loadedCustomization.ClothesSprite, ItemType.Clothes);
             SetCustomization(loadedCustomization.PantsSprite, ItemType.Pants);
             SetCustomization(loadedCustomization.FootSprite, ItemType.Foot);
+            SetCustomization(loadedCustomization.WeaponSprite, ItemType.Weapon);
         }
 
         private void SetCustomization(Sprite sprite, ItemType itemType)
@@ -36,8 +38,8 @@ namespace Player
                 case ItemType.Face:
                     _faceRenderer.sprite = sprite;
                     break;
-                case ItemType.Hair:
-                    _hairRenderer.sprite = sprite;
+                case ItemType.Hood:
+                    _hoodRenderer.sprite = sprite;
                     break;
                 case ItemType.Clothes:
                     _clothesRenderer.sprite = sprite;
@@ -47,6 +49,9 @@ namespace Player
                     break;
                 case ItemType.Foot:
                     _footRenderer.sprite = sprite;
+                    break;
+                case ItemType.Weapon:
+                    _weaponRenderer.sprite = sprite;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException(nameof(itemType), itemType, null);
@@ -58,10 +63,11 @@ namespace Player
             return new Customization
             {
                 FaceSprite = _faceRenderer.sprite,
-                HairSprite = _hairRenderer.sprite,
+                HoodSprite = _hoodRenderer.sprite,
                 ClothesSprite = _clothesRenderer.sprite,
                 PantsSprite = _pantsRenderer.sprite,
-                FootSprite = _footRenderer.sprite
+                FootSprite = _footRenderer.sprite,
+                WeaponSprite = _weaponRenderer.sprite
             };
         }
     }

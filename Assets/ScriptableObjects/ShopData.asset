@@ -13,24 +13,129 @@ MonoBehaviour:
   m_Name: ShopData
   m_EditorClassIdentifier: 
   ItemSlotData:
-  - Name: Clothes 1
-    ItemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  - Name: Face 1
+    ItemIcon: {fileID: 21300000, guid: 518ab34707033904cb1d99dbfcc9f4bb, type: 3}
     ItemPrice: 300
     ItemDescription: 
-    ItemSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    ItemSprite: {fileID: 21300000, guid: 518ab34707033904cb1d99dbfcc9f4bb, type: 3}
     ItemType: 0
     ID: 0
-  - Name: Clothes 1
-    ItemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    ItemPrice: 15
+  - Name: Face 2
+    ItemIcon: {fileID: 21300000, guid: 8e016bdb4d00e70429de56b91135940c, type: 3}
+    ItemPrice: 300
     ItemDescription: 
-    ItemSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    ItemSprite: {fileID: 21300000, guid: 8e016bdb4d00e70429de56b91135940c, type: 3}
+    ItemType: 0
+    ID: 1
+  - Name: Face 3
+    ItemIcon: {fileID: 21300000, guid: f0dca671fefddc54c98270536b979b8b, type: 3}
+    ItemPrice: 300
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: f0dca671fefddc54c98270536b979b8b, type: 3}
+    ItemType: 0
+    ID: 2
+  - Name: Hood 1
+    ItemIcon: {fileID: 21300000, guid: 468244f274f38f64b85773c7888444b6, type: 3}
+    ItemPrice: 400
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 468244f274f38f64b85773c7888444b6, type: 3}
     ItemType: 1
-    ID: 0
-  - Name: Clothes 1
-    ItemIcon: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-    ItemPrice: 250
+    ID: 3
+  - Name: Hood 2
+    ItemIcon: {fileID: 21300000, guid: 20eb058aea3c3a744bb5d47a1610550a, type: 3}
+    ItemPrice: 400
     ItemDescription: 
-    ItemSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+    ItemSprite: {fileID: 21300000, guid: 20eb058aea3c3a744bb5d47a1610550a, type: 3}
+    ItemType: 1
+    ID: 4
+  - Name: Hood 3
+    ItemIcon: {fileID: 21300000, guid: dcb72940063c94f44abc2366768e713a, type: 3}
+    ItemPrice: 400
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: dcb72940063c94f44abc2366768e713a, type: 3}
+    ItemType: 1
+    ID: 5
+  - Name: Clothes 1
+    ItemIcon: {fileID: 21300000, guid: 215dd6c48c732d744aecd29e7fecbbfa, type: 3}
+    ItemPrice: 500
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 215dd6c48c732d744aecd29e7fecbbfa, type: 3}
     ItemType: 2
-    ID: 0
+    ID: 6
+  - Name: Clothes 2
+    ItemIcon: {fileID: 21300000, guid: 250530d3e9754ed418009e3d539275b3, type: 3}
+    ItemPrice: 500
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 250530d3e9754ed418009e3d539275b3, type: 3}
+    ItemType: 2
+    ID: 7
+  - Name: Clothes 3
+    ItemIcon: {fileID: 21300000, guid: 124013dbba7f284489ac16156c930131, type: 3}
+    ItemPrice: 500
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 124013dbba7f284489ac16156c930131, type: 3}
+    ItemType: 2
+    ID: 8
+  - Name: Pants 1
+    ItemIcon: {fileID: 21300000, guid: c376d5b80d02ffe4ba89fd03d60ec471, type: 3}
+    ItemPrice: 500
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: c376d5b80d02ffe4ba89fd03d60ec471, type: 3}
+    ItemType: 3
+    ID: 9
+  - Name: Pants 2
+    ItemIcon: {fileID: 21300000, guid: b1babcb6ce4ee78478abc5076a6d1b8d, type: 3}
+    ItemPrice: 500
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: b1babcb6ce4ee78478abc5076a6d1b8d, type: 3}
+    ItemType: 3
+    ID: 10
+  - Name: Pants 3
+    ItemIcon: {fileID: 21300000, guid: 0c6412d95175c2b40bd9a27f7d1fa096, type: 3}
+    ItemPrice: 500
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 0c6412d95175c2b40bd9a27f7d1fa096, type: 3}
+    ItemType: 3
+    ID: 11
+  - Name: Foot 1
+    ItemIcon: {fileID: 21300000, guid: 6fa8902135d83ff49a376c05761b61d4, type: 3}
+    ItemPrice: 100
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 6fa8902135d83ff49a376c05761b61d4, type: 3}
+    ItemType: 4
+    ID: 12
+  - Name: Foot 2
+    ItemIcon: {fileID: 21300000, guid: add7b98e4870e9d4c8e1dd5e07e3de1c, type: 3}
+    ItemPrice: 100
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: add7b98e4870e9d4c8e1dd5e07e3de1c, type: 3}
+    ItemType: 4
+    ID: 13
+  - Name: Foot 3
+    ItemIcon: {fileID: 21300000, guid: 2932647fff9189e40a62a25143f3f534, type: 3}
+    ItemPrice: 100
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 2932647fff9189e40a62a25143f3f534, type: 3}
+    ItemType: 4
+    ID: 14
+  - Name: Weapon 1
+    ItemIcon: {fileID: 21300000, guid: f8d916881a19b7a4a99ec74753414a40, type: 3}
+    ItemPrice: 1000
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: f8d916881a19b7a4a99ec74753414a40, type: 3}
+    ItemType: 5
+    ID: 15
+  - Name: Weapon 2
+    ItemIcon: {fileID: 21300000, guid: 0a4a3c212d77eb243aeaac660261fb0f, type: 3}
+    ItemPrice: 1000
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: 0a4a3c212d77eb243aeaac660261fb0f, type: 3}
+    ItemType: 5
+    ID: 16
+  - Name: Weapon 3
+    ItemIcon: {fileID: 21300000, guid: ac0dddbcfbe1ac846ab5ba58507ed979, type: 3}
+    ItemPrice: 1000
+    ItemDescription: 
+    ItemSprite: {fileID: 21300000, guid: ac0dddbcfbe1ac846ab5ba58507ed979, type: 3}
+    ItemType: 5
+    ID: 17

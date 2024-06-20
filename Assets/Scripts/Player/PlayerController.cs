@@ -1,4 +1,5 @@
 using System;
+using Managers;
 using ScriptableObjects;
 using UnityEngine;
 using UnityEngine.AI;
@@ -19,7 +20,7 @@ namespace Player
 
         private void Start()
         {
-            _mainCamera = Camera.main;
+            _mainCamera = GameManager.Instance.GetMainCamera();
             _navMeshAgent = GetComponent<NavMeshAgent>();
 
             _navMeshAgent.updateRotation = false;
@@ -36,7 +37,6 @@ namespace Player
 
         private void MovePlayer()
         {
-            Debug.Log("MOVING");
             _navMeshAgent.SetDestination(_movementPosition);
             if (Vector2.Distance(transform.position, _movementPosition) < 0.1f)
             {
@@ -46,8 +46,6 @@ namespace Player
 
         private void MoveToClickPosition()
         {
-            Debug.Log("MovingToClickPosition");
-            
             var worldPosition = _mainCamera.ScreenToWorldPoint(Input.mousePosition);
             _movementPosition = new Vector2(worldPosition.x, worldPosition.y);
             _onMoving = MovePlayer;

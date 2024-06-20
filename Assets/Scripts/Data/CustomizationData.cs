@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Data
 {
@@ -6,18 +7,20 @@ namespace Data
     public class CustomizationData : ScriptableObject
     {
         [SerializeField] public Sprite FaceData;
-        [SerializeField] public Sprite HairData;
+        [SerializeField] public Sprite HoodData;
         [SerializeField] public Sprite ClothesData;
         [SerializeField] public Sprite PantsData;
         [SerializeField] public Sprite FootData;
+        [SerializeField] public Sprite WeaponData;
 
         public void SaveData(Customization customization)
         {
             FaceData = customization.FaceSprite;
-            HairData = customization.HairSprite;
+            HoodData = customization.HoodSprite;
             ClothesData = customization.ClothesSprite;
             PantsData = customization.PantsSprite;
             FootData = customization.FootSprite;
+            WeaponData = customization.WeaponSprite;
         }
 
         public Customization LoadData()
@@ -25,10 +28,11 @@ namespace Data
             return new Customization
             {
                 FaceSprite = FaceData,
-                HairSprite = HairData,
+                HoodSprite = HoodData,
                 ClothesSprite = ClothesData,
                 PantsSprite = PantsData,
                 FootSprite = FootData,
+                WeaponSprite = WeaponData,
             };
         }
     }
@@ -36,9 +40,10 @@ namespace Data
     public struct Customization
     {
         public Sprite FaceSprite;
-        public Sprite HairSprite;
+        public Sprite HoodSprite;
         public Sprite ClothesSprite;
         public Sprite PantsSprite;
         public Sprite FootSprite;
+        public Sprite WeaponSprite;
     }
 }
