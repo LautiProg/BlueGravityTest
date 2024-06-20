@@ -12,5 +12,7 @@ namespace Data
         public Sprite ItemSprite;
         public ItemType ItemType;
         public int ID;
+        public Vector2 Position;
+        public Vector2 WidthHeight;
     }
 }

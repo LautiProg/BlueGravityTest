@@ -14,7 +14,9 @@ namespace UI
         {
             _itemSlotData = itemSlotData;
             ItemImage.sprite = itemSlotData.ItemIcon;
-            _itemPriceText.SetText(itemSlotData.ItemPrice.ToString(CultureInfo.InvariantCulture));
+            ItemImage.rectTransform.localPosition = new Vector2(itemSlotData.Position.x, itemSlotData.Position.y);
+            ItemImage.rectTransform.sizeDelta = new Vector2(itemSlotData.WidthHeight.x, itemSlotData.WidthHeight.y);
+            _itemPriceText.SetText(itemSlotData.ItemPrice.ToString());
         }
 
         protected override void HandleOnClick()
